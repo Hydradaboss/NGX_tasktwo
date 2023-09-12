@@ -12,6 +12,19 @@ const getperson = async (req, res) => {
         return res.status(500).send("something went wrong")
     }
 }
+const getoneperson = async (req, res) => {
+    try {
+        const id = req.params.id
+        if(!id){
+            res.status().send("no id provided")
+        }
+        const user = await personmodule.findById(id)
+        res.status(200).send({user:user}) 
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send("something went wrong")
+    }
+}
 const createperson = async (req, res) => {
     try {
         const {name} = req.body
@@ -65,5 +78,6 @@ module.exports = {
     getperson,
     createperson,
     updateperson,
-    deleteperson
+    deleteperson,
+    getoneperson
 }
