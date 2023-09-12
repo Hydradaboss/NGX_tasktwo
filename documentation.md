@@ -1,7 +1,5 @@
 # Project: HNG Internship Stage 2 Backend Task
 
-## [![Build Status](https://raw.githubusercontent.com/Chosen2730/hng-stage-two/main/UML/uml.jpg)](https://raw.githubusercontent.com/Chosen2730/hng-stage-two/main/UML/uml.jpg)
-
 # A. Documentation
 
 ---
@@ -15,7 +13,7 @@
 ### Method: GET
 
 > ```
-> https://hng-backend-stage-two.vercel.app/api/
+>c
 > ```
 
 ### Example Response (**raw**)
@@ -23,15 +21,14 @@
 ```json
 [
   {
-    "_id": "64fe03a53dc03d4b348fd49a",
-    "name": "Simon Robinson",
-    "__v": 0
-  },
-  {
-    "_id": "64fe03bb3dc03d4b348fd49e",
-    "name": "Ruth Justice",
-    "__v": 0
-  }
+    "user": [
+        {
+            "_id": "64fee303475fe4822dc5ef9c",
+            "name": "jas",
+            "__v": 0
+        }
+    ]
+}
 ]
 ```
 
@@ -50,14 +47,14 @@
 ### Method: POST
 
 > ```
-> https://hng-backend-stage-two.vercel.app/api/
+>https://ngx-tasktwo.onrender.com/api
 > ```
 
 ### Example Body (**raw**)
 
 ```json
 {
-  "name": "Adepitan Ademola"
+  "name": "jas"
 }
 ```
 
@@ -65,18 +62,23 @@
 
 ```json
 {
-  "name": "Adepitan Ademola",
-  "_id": "64fe0cf53795160772b6e6a1",
-  "__v": 0
+    "user": {
+        "_id": "64fee303475fe4822dc5ef9c",
+        "name": "jas",
+        "__v": 0
+    }
 }
 ```
 
 ### Example Duplicate Error Response (**raw**)
 
 ```json
-{
-  "msg": "This name already exist, enter a new unique name"
-}
+something went wrong
+```
+
+### In terminal
+```
+MongoServerError: E11000 duplicate key error collection: test.people index: name_1 dup key: { name: "jas" }
 ```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
@@ -86,17 +88,17 @@
 ### Method: GET
 
 > ```
-> https://hng-backend-stage-two.vercel.app/api/{user_id}
+> >https://ngx-tasktwo.onrender.com/api/{id}
 > ```
 
-- Supposing user_id is "64fe03bb3dc03d4b348fd49e";
+- Supposing id is "64fee303475fe4822dc5ef9c";
 
 ### Example Response (**raw**)
 
 ```json
 {
-  "_id": "64fe0a0928e2ada1b9c5f800",
-  "name": "Adepitan Ademola",
+  "_id": "64fee303475fe4822dc5ef9c",
+  "name": "jas",
   "__v": 0
 }
 ```
@@ -108,16 +110,16 @@
 ### Method: PATCH
 
 > ```
-> https://hng-backend-stage-two.vercel.app/api/{user_id}
+> 
 > ```
 
-- Supposing user_id is "64fe03bb3dc03d4b348fd49e";
+- Supposing user_id is "64fee303475fe4822dc5ef9c";
 
 ### Example Body (**raw**)
 
 ```json
 {
-  "name": "Ruth Justina"
+  "name": "Seyi"
 }
 ```
 
@@ -125,12 +127,10 @@
 
 ```json
 {
-  "msg": "User with ID 64fe03bb3dc03d4b348fd49e has been Updated successfully",
-  "person": {
-    "_id": "64fe03bb3dc03d4b348fd49e",
-    "name": "Ruth Justina",
+    "_id": "64fee303475fe4822dc5ef9c",
+    "name": "Seyi",
     "__v": 0
-  }
+  
 }
 ```
 
@@ -141,17 +141,15 @@
 ### Method: DELETE
 
 > ```
-> https://hng-backend-stage-two.vercel.app/api/{user_id}
+ >https://ngx-tasktwo.onrender.com/api/{id}
 > ```
 
-- Supposing user_id is "64fe03bb3dc03d4b348fd49e";
+- Supposing user_id is "64fee303475fe4822dc5ef9c";
 
 ### Example Response (**raw**)
 
 ```json
-{
-  "msg": "User with ID 64fe03bb3dc03d4b348fd49e has been deleted successfully"
-}
+"done"
 ```
 
 ---
