@@ -9,6 +9,7 @@ const getperson = async (req, res) => {
         res.status(200).send({user:user}) 
     } catch (error) {
         console.log(error)
+        return res.status(500).send("something went wrong")
     }
 }
 const createperson = async (req, res) => {
@@ -24,6 +25,7 @@ const createperson = async (req, res) => {
         res.status(200).send({user:user})
     } catch (error) {
         console.log(error)
+        return res.status(500).send("something went wrong")
     }
 }
 const updateperson = async (req, res) => {
@@ -42,6 +44,7 @@ const updateperson = async (req, res) => {
         res.status(200).send({user:user})
     } catch (error) {
         console.log(error)
+        return res.status(500).send("something went wrong")
     }
 }
 const deleteperson = async (req, res) => {
@@ -54,6 +57,7 @@ const deleteperson = async (req, res) => {
         res.status(200).send("done")
     } catch (error) {
         console.log(error)
+        return res.status(500).send("something went wrong")
     }
 }
 
